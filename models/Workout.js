@@ -6,21 +6,18 @@ const WorkoutSchema = new Schema({
         type: Date,
         default: Date.now()
     },
-    
-})
-
-Workout.init(
-    {
-        exercise: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        date: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+    exercises: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Exercise"
         }
+    ],
+    totalDuration: {
+        type: Number,
+        default: 0
     }
-)
+});
 
+const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
