@@ -1,20 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-class Exercise extends Model {}
+const ExerciseSchema = new Schema({
+    name: String,
+    type: String,
+    reps: Number,
+    sets: Number,
+    weight: Number,
+    duration: Number,
+    distance: Number
+});
 
-Exercise.init(
-    {
-        exercise: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        date: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        }
-    }
-)
+const Exercise = mongoose.model("Exercise", ExerciseSchema);
 
 
 module.exports = Exercise;
