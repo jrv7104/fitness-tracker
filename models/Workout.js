@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-class Workout extends Model {}
+const WorkoutSchema = new Schema({
+    day: {
+        type: Date,
+        default: Date.now()
+    },
+    
+})
 
 Workout.init(
     {
