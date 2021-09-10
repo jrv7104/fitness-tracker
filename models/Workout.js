@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection")
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 class Workout extends Model {}
 
