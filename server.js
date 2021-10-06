@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const routes = require("./routes");
+const mongoose = require("mongoose");
 
 //middleware
 app.use(express.urlencoded({extended: true}));
@@ -11,6 +13,13 @@ app.use(express.static('public'));
 
 //routing
 //pending
+mongoose.connect('mongodb://localhost/workout', {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+});
+
+app.use(routes)
 app.get('/exercise', (req, res) => {
     // console.log(__dirname)
     res.sendFile(path.join(__dirname, "/public/exercise.html"))
