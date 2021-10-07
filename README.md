@@ -1,3 +1,8 @@
 # Unit 18 Nosql Homework: Workout Tracker
 
-This is my progress on a workout tracker. I have made some progress on the models and server aspects, but hit a dead end after those tasks. I also had issues seeding the data. I also had issues that my tutor was unavailable the day before this assignment was due, and it would have been a big help. I feel like with a little more guidance I can make this project fully work.
+This is my progress on a workout tracker. This allows a user to submit what type of workout they made, how long or hard it was, and it will record the progress. On the dashboard it will also display the results of the last seven workouts made. 
+
+Deployment link: https://abcd-fitness.herokuapp.com/
+GitHub repository: https://github.com/jrv7104/fitness-tracker
+
+Screenshots:
