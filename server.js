@@ -7,7 +7,7 @@ const routes = require("./routes");
 const mongoose = require("mongoose");
 
 //middleware
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static('public'));
 
