@@ -30,7 +30,25 @@ router.get("/", (req, res) => {
       .catch(err => res.status(500).json(err))
   });
 
-// router.get('/range', (req,res) =>
-
+router.get('/range', (req,res) => {
+    Workout.aggregate(
+        [
+            {
+                $addFields: {
+                    totalDuration: {
+                        $sum: "$exercises.duration"
+                    }
+                }
+            }
+        ]
+    )
+    .sort({_id: -1})
+    .limit(7)
+    .then(reviews => {
+        console.log("This is the last seven workouts", reviews)
+        res.json(reviews)
+    })
+    .catch(err => res.status(500).json(err))
+});
 
   module.exports = router;
