@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 //middleware
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('public/'));
 
 //routing
 //pending
