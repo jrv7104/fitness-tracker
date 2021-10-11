@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const workout = require("./workout.js");
 
-router.use("/workout", workout);
+router.use("/workouts", workout);
 
 module.exports = router;
